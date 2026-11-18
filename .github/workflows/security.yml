@@ -14,7 +14,8 @@ jobs:
     name: SAST — Semgrep
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # v4.2.2; pinned to an immutable commit for supply-chain safety.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Scan source code with OWASP rules
         run: docker run --rm -v "$PWD:/src" semgrep/semgrep:1.148.0 semgrep scan --config p/owasp-top-ten --error /src
 
@@ -22,9 +23,11 @@ jobs:
     name: SCA and misconfiguration — Trivy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # v4.2.2; pinned to an immutable commit for supply-chain safety.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Scan repository filesystem
-        uses: aquasecurity/trivy-action@0.35.0
+        # v0.35.0; pinned to an immutable commit for supply-chain safety.
+        uses: aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1
         with:
           scan-type: fs
           scan-ref: .
@@ -37,10 +40,12 @@ jobs:
     name: Secret detection — Gitleaks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # v4.2.2; pinned to an immutable commit for supply-chain safety.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
       - name: Detect credentials in Git history
-        uses: gitleaks/gitleaks-action@v2
+        # v2.3.9; pinned to an immutable commit for supply-chain safety.
+        uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

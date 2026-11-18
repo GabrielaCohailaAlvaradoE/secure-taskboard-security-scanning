@@ -45,7 +45,7 @@ Un archivo puede ser eliminado, pero un secreto que llegó a un commit puede con
 
 El archivo `.github/workflows/security.yml` se activa con `push`, pull request y ejecución manual. Sus tres jobs funcionan de manera independiente: si cualquiera detecta un hallazgo bloqueante, el resultado queda visible en GitHub Actions para revisión del equipo.
 
-En paralelo, `.github/workflows/deploy-pages.yml` publica la aplicación en GitHub Pages cuando se actualiza la rama `main`. GitHub documenta este flujo como un mecanismo de despliegue automatizado que entrega la URL publicada como salida del job. Configuramos permisos mínimos: `contents: read` para los escaneos y, únicamente para la publicación, `pages: write` e `id-token: write`.
+En paralelo, `.github/workflows/deploy-pages.yml` publica la aplicación en GitHub Pages cuando se actualiza la rama `main`. GitHub documenta este flujo como un mecanismo de despliegue automatizado que entrega la URL publicada como salida del job. Configuramos permisos mínimos: `contents: read` para los escaneos y, únicamente para la publicación, `pages: write` e `id-token: write`. Además, las acciones de terceros se fijan a un SHA de commit inmutable en vez de una etiqueta móvil.
 
 ## Resultados y límites
 
