@@ -1,9 +1,9 @@
 # Escaneo de vulnerabilidades de una aplicación web con Semgrep, Trivy y Gitleaks
 
 **Autores:** Gabriela Estefania Cohaila Alvarado (2022075746) y Jhony Vargas Luque (2022075754)  
-**Repositorio:** REEMPLAZAR_CON_URL_DEL_REPOSITORIO  
-**Aplicación publicada:** REEMPLAZAR_CON_URL_DE_GITHUB_PAGES  
-**Video demostrativo:** REEMPLAZAR_CON_URL_DEL_VIDEO
+**Repositorio:** https://github.com/GabrielaCohailaAlvaradoE/secure-taskboard-security-scanning  
+**Aplicación publicada:** https://gabrielacohailaalvaradoe.github.io/secure-taskboard-security-scanning/  
+**Video demostrativo:** se añadirá después de la publicación en YouTube.
 
 ## Resumen
 
