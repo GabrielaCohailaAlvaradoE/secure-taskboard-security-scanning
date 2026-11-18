@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tablero local de tareas con prácticas de desarrollo seguro.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'">
+    <title>SecureTaskboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">Aplicación demostrativa</p>
+        <h1>SecureTaskboard</h1>
+        <p class="lead">Organiza tareas sin enviar información a ningún servidor.</p>
+      </header>
+
+      <section class="card" aria-labelledby="new-task-title">
+        <h2 id="new-task-title">Nueva tarea</h2>
+        <form id="task-form" novalidate>
+          <label for="task-title">Título</label>
+          <input id="task-title" name="title" type="text" maxlength="80" required autocomplete="off" placeholder="Ej.: Revisar resultados de Semgrep">
+          <button type="submit">Agregar tarea</button>
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="tasks-title">
+        <div class="section-heading">
+          <h2 id="tasks-title">Pendientes</h2>
+          <button id="clear-completed" class="secondary" type="button">Eliminar completadas</button>
+        </div>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <p id="empty-state" class="empty">Aún no tienes tareas.</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
